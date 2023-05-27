@@ -5,7 +5,10 @@ This library is designed for Arduino, ESP32, ESP8266... to control the 74HC595 4
 ![74HC595 4-Digit 7-Segment Display Module](https://arduinogetstarted.com/images/tutorial/74hc595-4-digit-7-segment-display-pinout.jpg)
 
 
-Product Link: [74HC595 4-Digit 7-Segment Display Module](https://diyables.io/products/4-digit-7-segment-display-led-74hc595-driver-with-4-dots)
+
+Product Link
+----------------------------
+[74HC595 4-Digit 7-Segment Display Module](https://diyables.io/products/4-digit-7-segment-display-led-74hc595-driver-with-4-dots)
 
 
 Features
@@ -14,7 +17,7 @@ Features
 * **High-Level**: Displaying Float with the decimal place, zero-padding options, supporting the negative number
 * **Low-Level**: Displaying numeric characters digit-by-digit
 * **Low-Level**: Displaying non-numeric characters digit-by-digit, including:
-  * - (dash)
+  * \- (dash)
   * _ (underscore)
   * ° (degree)
   * C
