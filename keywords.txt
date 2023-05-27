@@ -1,0 +1,35 @@
+#######################################
+# Syntax Coloring Map For DIYables_4Digit7Segment_74HC595
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+DIYables_4Digit7Segment_74HC595	KEYWORD1
+SegChars	KEYWORD1
+display	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+clear	KEYWORD2
+setDot	KEYWORD2
+setNumber	KEYWORD2
+setChar	KEYWORD2
+show	KEYWORD2
+loop	KEYWORD2
+printInt	KEYWORD2
+printFloat	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+DASH	LITERAL1
+UNDERSCORE	LITERAL1
+C	LITERAL1
+E	LITERAL1
+F	LITERAL1
+DEGREE	LITERAL1
+
