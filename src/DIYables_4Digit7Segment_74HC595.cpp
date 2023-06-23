@@ -31,7 +31,7 @@
 
 #include <DIYables_4Digit7Segment_74HC595.h>
 
-static const byte DIYables_4Digit7Segment_74HC595::digitPatterns[16] = {
+const byte DIYables_4Digit7Segment_74HC595::digitPatterns[16] = {
   B11000000,  // 0
   B11111001,  // 1
   B10100100,  // 2
