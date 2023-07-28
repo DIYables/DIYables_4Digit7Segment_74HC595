@@ -58,3 +58,4 @@ Tutorials
 * [ESP32 - 74HC595 4-Digit 7-Segment Display](https://esp32io.com/tutorials/esp32-74hc595-4-digit-7-segment-display)
 * [ESP8266 - 74HC595 4-Digit 7-Segment Display](https://newbiely.com/tutorials/esp8266/esp8266-74hc595-4-digit-7-segment-display)
 
+**DIYables invests time and resources providing this open source code, please support DIYables hardware by [purchasing products from DIYables](https://diyables.io/)!**
