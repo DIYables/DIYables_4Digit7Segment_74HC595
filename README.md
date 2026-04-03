@@ -54,8 +54,34 @@ References
 
 Tutorials
 ----------------------------
+
 * [Arduino - 74HC595 4-Digit 7-Segment Display](https://arduinogetstarted.com/tutorials/arduino-74hc595-4-digit-7-segment-display)
+* [Arduino Uno R4 - 74HC595 4-Digit 7-Segment Display](https://newbiely.com/tutorials/arduino-uno-r4/arduino-uno-r4-74hc595-4-digit-7-segment-display)
+* [Arduino Nano - 74HC595 4-Digit 7-Segment Display](https://newbiely.com/tutorials/arduino-nano/arduino-nano-74hc595-4-digit-7-segment-display)
+* [Arduino Nano 33 IoT - 74HC595 4-Digit 7-Segment Display](https://newbiely.com/tutorials/arduino-nano-iot/arduino-nano-33-iot-74hc595-4-digit-7-segment-display)
+* [Arduino Nano ESP32 - 74HC595 4-Digit 7-Segment Display](https://newbiely.com/tutorials/arduino-nano-esp32/arduino-nano-esp32-74hc595-4-digit-7-segment-display)
+* [Arduino MKR WiFi 1010 - 74HC595 4-Digit 7-Segment Display](https://newbiely.com/tutorials/arduino-mkr/arduino-mkr-wifi-1010-74hc595-4-digit-7-segment-display)
+* [Arduino Mega - 74HC595 4-Digit 7-Segment Display](https://newbiely.com/tutorials/arduino-mega/arduino-mega-74hc595-4-digit-7-segment-display)
 * [ESP32 - 74HC595 4-Digit 7-Segment Display](https://esp32io.com/tutorials/esp32-74hc595-4-digit-7-segment-display)
 * [ESP8266 - 74HC595 4-Digit 7-Segment Display](https://newbiely.com/tutorials/esp8266/esp8266-74hc595-4-digit-7-segment-display)
 
-**DIYables invests time and resources providing this open source code, please support DIYables hardware by [purchasing products from DIYables](https://diyables.io/)!**
+
+Tested Hardware
+----------------------------
+
+| Board                   | Tested |
+|-------------------------|:------:|
+| Arduino Uno R3          |   ✅   |
+| [DIYables STEM V3 *(works like Arduino Uno R3)*](https://diyables.io/products/diyables-stem-v3-fully-compatible-with-arduino-uno-r3) |   ✅   |
+| Arduino Uno R4 WiFi     |   ✅   |
+| [DIYables STEM V4 IoT *(works like Arduino Uno R4 WiFi)*](https://diyables.io/products/diyables-stem-v4-iot-fully-compatible-with-arduino-uno-r4-wifi) |   ✅   |
+| [DIYables STEM V4B IoT *(works like Arduino Uno R4 WiFi)*](https://diyables.io/products/diyables-stem-v4b-iot-development-board-compatible-with-arduino-uno-r4-wifi-ra4m1-32-bit-arm-cortex-m4-with-esp32-s3-wifi-bluetooth-usb-c-for-learning-prototyping-education) |   ✅   |
+| Arduino Uno R4 Minima   |   ✅   |
+| [DIYables STEM V4 Edu *(works like Arduino Uno R4 Minima)*](https://diyables.io/stem-v4-edu) |   ✅   |
+| Arduino Mega            |   ✅   |
+| [DIYables MEGA2560 R3 *(works like Arduino Mega 2560 Rev3)*](https://diyables.io/atmega2560-board) |   ✅   |
+| Arduino Due             |   ✅    |
+| Arduino Giga            |   ✅    |
+| [DIYables ESP32 Development Board](https://diyables.io/esp32-board) |   ✅   |
+| [DIYables ESP32 S3, Uno-form factor](https://diyables.io/products/esp32-s3-development-board-with-esp32-s3-wroom-1-n16r8-wifi-bluetooth-uno-compatible-form-factor-works-with-arduino-ide) |   ✅   |
+| Other boards            |   Not yet, expected to work    |
