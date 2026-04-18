@@ -1,77 +1,77 @@
-/*
-   Copyright (c) 2023, DIYables.io. All rights reserved.
-
-   Redistribution and use in source and binary forms, with or without
-   modification, are permitted provided that the following conditions
-   are met:
-
-   - Redistributions of source code must retain the above copyright
-     notice, this list of conditions and the following disclaimer.
-
-   - Redistributions in binary form must reproduce the above copyright
-     notice, this list of conditions and the following disclaimer in the
-     documentation and/or other materials provided with the distribution.
-
-   - Neither the name of the DIYables.io nor the names of its
-     contributors may be used to endorse or promote products derived from
-     this software without specific prior written permission.
-
-   THIS SOFTWARE IS PROVIDED BY DIYABLES.IO "AS IS" AND ANY EXPRESS OR
-   IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-   DISCLAIMED. IN NO EVENT SHALL DIYABLES.IO BE LIABLE FOR ANY DIRECT,
-   INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-   (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-   SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-   HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
-   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
-   IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-   POSSIBILITY OF SUCH DAMAGE.
-*/
-
 #ifndef DIYables_4Digit7Segment_74HC595_h
 #define DIYables_4Digit7Segment_74HC595_h
 
 #include <Arduino.h>
 
-#define SEG7_OFF 0xFF
+// Segment bit mapping: DP G F E D C B A
+// Bit positions:        7  6 5 4 3 2 1 0
 
-enum class SegChars {
-  DASH,
-  UNDERSCORE,
-  C,
-  E,
-  F,
-  DEGREE
-};
+#define SEG_A  0x01
+#define SEG_B  0x02
+#define SEG_C  0x04
+#define SEG_D  0x08
+#define SEG_E  0x10
+#define SEG_F  0x20
+#define SEG_G  0x40
+#define SEG_DP 0x80
 
-class DIYables_4Digit7Segment_74HC595
-{
-  private:
-    int _sclk;
-    int _rclk;
-    int _dio;
+// Special character code for degree symbol
+#define DEGREE_CHAR '\x07'
 
-    static const byte digitPatterns[16];
+// Number of digits
+#define NUM_DIGITS 4
 
-    byte _digit_sets[4];
-    byte _digit_values[4];
-    byte _digit_dots;
+// Refresh interval in milliseconds (per digit)
+#define REFRESH_INTERVAL_MS 2
 
-    void shift(byte value);
-    void setInt(int number, bool zero_padding);
+class DIYables_4Digit7Segment_74HC595 {
+public:
+    DIYables_4Digit7Segment_74HC595(int sclkPin, int rclkPin, int dioPin, bool commonAnode = true);
 
-  public:
-    DIYables_4Digit7Segment_74HC595(int sclk, int rclk, int dio);
+    void begin();
+    void loop();
+
+    // Primary API
+    void print(int value, bool zeroPad = false);
+    void print(double value, int decimalPlaces = -1, bool zeroPad = false);
+    void print(const char* text);
+    void printTemperature(int temperature, char unit = 'C');
+    void printTime(int hours, int minutes, bool colon = true);
 
     void clear();
-    void setDot(int pos);
-    void setNumber(int pos, int value);
-    void setChar(int pos, SegChars value);
-    void show();
-    void loop();
-    void printInt(int number, bool zero_padding);
-    void printFloat(float number, int decimal_place, bool zero_padding);
+    void off();
+    void on();
+
+    // Display-aware blocking helpers
+    void delay(unsigned long ms);
+    void yield();
+
+    // Low-level API
+    void setDot(int position, bool state = true);
+    void setChar(int position, char ch);
+    void setSegments(int position, uint8_t segments);
+    void setNumber(int position, int number);
+
+private:
+    int _sclkPin;
+    int _rclkPin;
+    int _dioPin;
+    bool _commonAnode;
+    bool _enabled;
+
+    uint8_t _buffer[NUM_DIGITS];
+    bool _dots[NUM_DIGITS];
+    uint8_t _currentDigit;
+    unsigned long _lastRefresh;
+
+    void _shiftOut(uint8_t data);
+    void _latch();
+    void _writeDigit(uint8_t position, uint8_t segments);
+    void _printInt(int number, bool zeroPad);
+    void _printFloat(double number, int decimalPlaces, bool zeroPad);
+    void _printStr(const char* text);
+
+    static uint8_t _charToSegments(char ch);
 };
 
 #endif
